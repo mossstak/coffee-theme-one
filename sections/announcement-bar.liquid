@@ -1,20 +1,22 @@
 {{ 'announcement-bar.css' | asset_url | stylesheet_tag }}
 
-<section>
-  <h1>Announcement Bar</h1>
-</section>
+{% if section.settings['show-announcement'] %}
+  <section>
+    <h1>Announcement Bar</h1>
+  </section>
+{% endif %}
 
 {% schema %}
   {
     "name": "Announcement Bar",
     "settings": [
-        {
-            "type": "checkbox",
-            "id": "show-announcement",
-            "label": "Show Announcement Bar",
-            "default": true
+      {
+        "type": "checkbox",
+        "id": "show-announcement",
+        "label": "Show Announcement Bar",
+        "default": true
 
-        }
+      }
     ],
     "presets": [
       {
