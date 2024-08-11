@@ -2,7 +2,7 @@
 
 {% if section.settings['show-announcement'] %}
   <section>
-    <h1>Announcement Bar</h1>
+    <h1>{{ section.settings['announcement-text'] }}</h1>
   </section>
 {% endif %}
 
@@ -15,8 +15,7 @@
         "id": "show-announcement",
         "label": "Show Announcement Bar",
         "default": true
-      },
-      {
+      }, {
         "type": "text",
         "id": "announcement-text",
         "label": "Announcement Text"
