@@ -1,23 +1,69 @@
 {{ 'header.css' | asset_url | stylesheet_tag }}
 
-<nav>
+<header style="background-color: {{ section.settings.background_color }}; color: {{ section.settings.text_color }};">
+  {% if section.settings.logo != blank %}
+    {% assign logo_image = section.settings.logo %}
+    <img src="{{ logo_image | img_url: 'master' }}" alt="Logo" width="{{ logo_image.width }}" height="{{ logo_image.height }}">
+  {% endif %}
+  <nav>
     <ul>
-        {% for link in linklists.main-menu.links %}
-            <li>
-                <a href="{{link.url}}">{{link.title}}</a>
-            </li>
-        {% endfor %}
+      {% for link in linklists[section.settings.menu].links %}
+        <li>
+          <a href="{{ link.url }}" style="color: {{ section.settings.text_color }};">{{ link.title }}</a>
+        </li>
+      {% endfor %}
     </ul>
-</nav>
+  </nav>
+  {% if section.settings.custom_text != blank %}
+    <p>{{ section.settings.custom_text }}</p>
+  {% endif %}
+</header>
 
-{%schema%}  
-    {
-        "name": "Header",
-        "settings": [],
-        "presets": [
-            {
-                "name": "Header"
-            }
-        ]
-    }
-{%endschema%}
+{% schema %}
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#000000"
+      },
+      {
+        "type": "select",
+        "id": "menu",
+        "label": "Menu",
+        "options": [
+          {
+            "value": "main-menu",
+            "label": "Main Memu"
+          }, {
+            "value": "footer-menu",
+            "label": "Footer Menu"
+          }
+        ],
+        "default": "main-menu"
+      }, {
+        "type": "text",
+        "id": "custom_text",
+        "label": "Custom Text"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Header"
+      }
+    ]
+  }
+{% endschema %}
