@@ -1,0 +1,19 @@
+{{ 'header.css' | asset_url | stylesheet_tag }}
+
+<nav>
+    <ul>
+        <li>Home</li>
+    </ul>
+</nav>
+
+{%schema%}  
+    {
+        "name": "Header",
+        "settings": [],
+        "presets": [
+            {
+                "name": "Header"
+            }
+        ]
+    }
+{%endschema%}
