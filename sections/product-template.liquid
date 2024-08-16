@@ -1,0 +1,41 @@
+<section class="product">
+  <div class="product__info">
+    <h1>{{ product.title }}</h1>
+    <p>{{ product.description }}</p>
+    <!-- Add other product information -->
+  </div>
+
+  <div class="product__description-cards">
+    {% for block in section.blocks %}
+      <div class="card">
+        <h3>{{ block.settings.title }}</h3>
+        <p>{{ block.settings.description }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product",
+  "blocks": [
+    {
+      "type": "description_card",
+      "name": "Description Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

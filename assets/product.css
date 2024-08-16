@@ -1,0 +1,19 @@
+.product {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .product__info {
+    flex: 1;
+  }
+  
+  .product__description-cards {
+    flex: 1;
+  }
+  
+  .card {
+    background-color: #f5f5f5;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
