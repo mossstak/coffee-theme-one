@@ -14,7 +14,8 @@
         "type": "announcement-bar",
         "settings": {
           "show-announcement": true,
-          "announcement-text": ""
+          "announcement-text": "Navbar",
+          "text-alignment": "center"
         }
       },
       "header": {
