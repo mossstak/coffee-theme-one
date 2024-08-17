@@ -14,7 +14,12 @@
         "type": "announcement-bar",
         "settings": {
           "show-announcement": true,
-          "announcement-text": "Navbar"
+          "announcement-text": ""
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
         }
       }
     },
