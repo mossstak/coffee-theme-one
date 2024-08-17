@@ -1,0 +1,11 @@
+<header>
+    <div>
+        <div>
+            <ul class="nav-links">
+              {% for link in linklists['main-menu'].links -%}
+                <li>{{ link.title | link_to: link.url }}</li>
+              {%- endfor %}
+            </ul>
+          </div>
+    </div>
+</header>
