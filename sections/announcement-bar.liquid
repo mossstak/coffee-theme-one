@@ -1,7 +1,7 @@
 {{ 'announcement-bar.css' | asset_url | stylesheet_tag }}
 
 {% if section.settings['show-announcement'] %}
-  <section>
+  <section class="announcement-bar text-{{ section.settings['text-alignment'] }}">
     <h1>{{ section.settings['announcement-text'] }}</h1>
   </section>
 {% endif %}
@@ -19,12 +19,30 @@
         "type": "text",
         "id": "announcement-text",
         "label": "Announcement Text"
+      }, {
+        "type": "select",
+        "id": "text-alignment",
+        "label": "Text Alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "center"
       }
     ],
     "presets": [
       {
         "name": "Announcement Bar"
-
       }
     ]
   }

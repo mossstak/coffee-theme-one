@@ -1,7 +1,15 @@
-li {
-    list-style: none
-}
-
-.nav-link {
+header {
     display: flex;
-}
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+  }
+  
+  .nav-links li {
+    margin-left: 20px;
+  }
+  
