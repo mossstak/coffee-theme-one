@@ -1,4 +1,5 @@
 {{ 'hero.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'hero.js' | asset_url }}" defer="defer"></script>
 
 <nav>
   {%  render 'hero' %}
