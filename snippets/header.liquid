@@ -1,15 +1,15 @@
 <header>
     <div>
         <div>
-          <ul class="list-menu list-menu--inline" role="list">
-            {% for link in section.settings.menu.links %}
-              <li>
-                <a href="{{ link.url }}" class="header__menu-item list-menu__item link link--text focus-inset">
-                  {{ link.title | escape }}
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
+            <ul class="nav-links">
+              {% for link in linklists['main-menu'].links -%}
+                <li>
+                  <a href="{{ pages['page-handle'].url }}" class="header__menu-item list-menu__item link link--text focus-inset">
+                    {{ link.title | escape }} 
+                  </a>
+                </li>
+              {%- endfor %}
+            </ul>
           </div>
     </div>
 </header>
